@@ -1,0 +1,22 @@
+.LogoSearch {
+    display: flex;
+    gap: 5px;
+    margin: 10px;
+  }
+  .Search {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .Search>input {
+    background-color: rgb(231, 243, 245);
+    border: none;
+    outline: none;
+
+  }
+  .icon{
+    padding: 0px 6px;
+    background-color: rgb(212, 212, 255);
+  }
+ 

@@ -1,0 +1,21 @@
+.Profile{
+    position: relative;
+    display: grid;
+    grid-template-columns: 18rem auto 20rem;
+    gap: 1rem;
+    overflow: auto;
+    height: 150vh;
+}
+.Profile-Center{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* .left{
+    position: fixed;
+    left: 0px;
+}
+.right{
+    position: fixed;
+    right: 0px;
+} */

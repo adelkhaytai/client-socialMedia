@@ -18,6 +18,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage,  receivedMessage }) => {
   // fetching data for header
   useEffect(() => {
     const userId = chat?.members?.find((id) => id !== currentUser);
+    console.log('users id', userId)
     const getUserData = async () => {
       try {
         const { data } = await getUser(userId);
@@ -27,7 +28,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage,  receivedMessage }) => {
       }
     };
 
-    if (chat !== null) getUserData();
+    if (chat !== null) return getUserData();
   }, [chat, currentUser]);
 
   // fetch messages
@@ -77,7 +78,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage,  receivedMessage }) => {
 
 // Receive Message from parent component
 useEffect(()=> {
-  console.log("Message Arrived: ", receivedMessage)
   if (receivedMessage !== null && receivedMessage.chatId === chat._id) {
     setMessages([...messages, receivedMessage]);
   }
@@ -90,6 +90,7 @@ useEffect(()=> {
   const imageRef = useRef();
   return (
     <>
+    
       <div className="ChatBox-container">
         {chat ? (
           <>

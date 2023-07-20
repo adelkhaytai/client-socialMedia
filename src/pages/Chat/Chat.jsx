@@ -5,9 +5,10 @@ import { useEffect } from "react";
 import { userChats } from "../../api/ChatRequests";
 import { useDispatch, useSelector } from "react-redux";
 import { io } from "socket.io-client";
-import Conversation from "../../components/Coversation/Conversation";
+
 import NavIcons from "../../components/NavIcons/NavIcons";
 import ChatBox from "../../components/ChatBox/ChatBox";
+import Conversation from "../../components/Coversation/Conversation";
 
 const Chat = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Chat = () => {
   const [currentChat, setCurrentChat] = useState(null);
   const [sendMessage, setSendMessage] = useState(null);
   const [receivedMessage, setReceivedMessage] = useState(null);
-  console.log('chater' ,setCurrentChat)
+  
   // Get the chat in chat section
   useEffect(() => {
     const getChats = async () => {
@@ -54,14 +55,15 @@ const Chat = () => {
       console.log(data)
       setReceivedMessage(data);
     }
-
-    );
+    )
   }, []);
 
 
   const checkOnlineStatus = (chat) => {
     const chatMember = chat.members.find((member) => member !== user._id);
+    console.log('chatMember', chatMember)
     const online = onlineUsers.find((user) => user.userId === chatMember);
+    console.log( 'online',online)
     return online ? true : false;
   };
 
@@ -73,13 +75,16 @@ const Chat = () => {
         <div className="Chat-container">
           <h2>Chats</h2>
           <div className="Chat-list">
+        
             {chats.map((chat) => (
+               
               <div
                 onClick={() => {
                   setCurrentChat(chat);
                 }}
               >
                 <Conversation
+                
                   data={chat}
                   currentUser={user._id}
                   online={checkOnlineStatus(chat)}

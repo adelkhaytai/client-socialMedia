@@ -1,12 +1,18 @@
 .PostShare{
+    /* position: fixed;
+    top: 0px;
+    width: 50%; */
     display: flex;
     gap: 1rem;
-    background-color: var(--cardColor);
+    background-color:white;
     padding: 1rem;
     border-radius: 1rem;
     border: solid 0.5px black;
 }
 
+/* .box{
+    height: 100px;
+} */
 
 .PostShare>img{
     border-radius: 50%;

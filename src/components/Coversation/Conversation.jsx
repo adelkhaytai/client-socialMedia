@@ -10,10 +10,12 @@ const Conversation = ({ data, currentUser, online }) => {
   useEffect(()=> {
 
     const userId = data.members.find((id)=>id!==currentUser)
+    console.log('user ID',userId)
     const getUserData = async ()=> {
       try
       {
           const {data} =await getUser(userId)
+          console.log(data)
          setUserData(data)
          dispatch({type:"SAVE_USER", data:data})
       }

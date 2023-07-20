@@ -9,12 +9,14 @@ import { useState } from 'react';
 import ProfileModal from '../ProfileModal/ProfileModal';
 import { Link } from 'react-router-dom';
 import NavIcons from '../NavIcons/NavIcons';
+import FollowersCard from '../FollowersCard/FollowersCard';
 const RightSide = () => {
   const [modalOpened, setModalOpened]=useState(false)
 
   return (
     <div className='RightSide'>
        <NavIcons />
+       <FollowersCard/>
         <TrendCard/>
         <button className="button r-button" onClick={() => setModalOpened(true)}>
         Share

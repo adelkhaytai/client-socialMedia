@@ -28,7 +28,7 @@ const User = ({person}) => {
                           : serverPublic + "defaultProfile.png"} alt="" />
                         <div className='name'>
                         <span>{person.name}</span>
-                        <span>{person.username} </span>
+                        <span>{person.firstname} </span>
                         </div>
                     </div>
                     <button className={  following ? "button-unfollow" : "button fc-button"} onClick={handleFollow}>  {following ? "Unfollow" : "Follow"}</button>

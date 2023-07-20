@@ -1,14 +1,18 @@
-.RightSide{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+@media only screen and (min-width:600px) {
+    .RightSide{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 5px;
+    }
 }
 
-
-.navIcons{
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
+@media only screen and (min-width:600px){
+    .navIcons{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .navIcons>a>img{
@@ -25,8 +29,12 @@
     cursor: pointer;
 }
 
-.r-button{
-    height:3rem;
-    width: 80%;
-    align-self: center;
+
+@media only screen and (min-width:800px){
+    .r-button{
+        height:3rem;
+        width: 80%;
+        align-self: center;
+    }
+
 }

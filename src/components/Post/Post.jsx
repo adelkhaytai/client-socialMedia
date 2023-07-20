@@ -30,6 +30,12 @@ const Post = ({data,location}) => {
   
     return (
     <div className='Post'>
+       <div className='detail'>
+     
+        <span> {data.name} </span>
+        <span> {data.desc} </span>
+     
+    </div>
       <img
         src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
         alt=""
@@ -48,12 +54,7 @@ const Post = ({data,location}) => {
         </div>
 
         <span style={{fontSize:'12px',color:'var(--gray)'}}> {likes} Likes</span>
-        <div className='detail'>
-        
-            <span> {data.name} </span>
-            <span> {data.desc} </span>
-         
-        </div>
+       
     </div>
   )
 }

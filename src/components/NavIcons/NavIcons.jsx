@@ -19,7 +19,8 @@ const NavIcons = () => {
           <IoIosNotifications  style={{fontSize:'30px'}}/>
           <Link to='../chat' >
           <BiComment  style={{fontSize:'30px'}}/>
-          </Link>
+        
+      </Link>
     </div>
   );
 };

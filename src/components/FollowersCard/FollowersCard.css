@@ -6,8 +6,9 @@
     display: flex;
     flex-direction: column;
     font-size: 13px;
-  
-    background-color: rgba(124, 223, 223, 0.329);
+    padding: 15px;
+    margin: 10px;
+    background-color: rgba(190, 247, 247, 0.329);
 }
 .followers{
     display: flex;

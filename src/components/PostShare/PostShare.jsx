@@ -64,47 +64,61 @@ const PostShare = () => {
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
 
   return (
-    <div className='PostShare'>
+    <div className='box'>
+     
+      <div className='PostShare'>
+      <img
+        width={'30px'}  
+        height={'30px'}
+        borderRadius={'50%'}
+        src={
+          user.profilePicture
+            ? serverPublic + user.profilePicture
+            : serverPublic + "defaultProfile.png"
+        }
+        alt="Profile"
       
-        <div>
-            <input ref={desc} type="text" placeholder="What's happening" />
-            <div className='postOptions'>
-        <div className='option' style={{color:"var(--photo)"}} 
-        onClick={()=>{imageRef.current.click()}}>
-            <HiOutlinePhotograph/>          
-            </div>
-             <div className='option' style={{
-            color:"var(--video)"
-        }}>
-            <RiVideoAddFill/>          
-            </div> 
-            <div className='option' style={{
-            color:"var(--location)"
-        }}>
-            <GrLocation/>          
-            </div> 
-            <div className='option' style={{
-            color:"var(--shedule)"
-        }}>
-            <SlCalender/>          
-            </div>
-            <button className='button ps-button' onClick={handelSubmit} >
-                {loading ? "Uploading..." : "Share" }
-            </button>
-            <div style={{display:'none'}}>
-                <input type="file" name='myImage' ref={imageRef}
-                 onChange={onImageChange}/>
-            </div>
-        </div>
-        {image && (
-          <div className="previewImage">
-            <AiOutlineClose onClick={() => setImage(null)} />
-            <img src={URL.createObjectURL(image)} alt="" />
+      />
+          <div>
+              <input ref={desc} type="text" placeholder="What's happening" />
+              <div className='postOptions'>
+          <div className='option' style={{color:"var(--photo)"}} 
+          onClick={()=>{imageRef.current.click()}}>
+              <HiOutlinePhotograph/>          
+              </div>
+               <div className='option' style={{
+              color:"var(--video)"
+          }}>
+              <RiVideoAddFill/>          
+              </div> 
+              <div className='option' style={{
+              color:"var(--location)"
+          }}>
+              <GrLocation/>          
+              </div> 
+              <div className='option' style={{
+              color:"var(--shedule)"
+          }}>
+              <SlCalender/>          
+              </div>
+              <button className='button ps-button' onClick={handelSubmit} >
+                  {loading ? "Uploading..." : "Share" }
+              </button>
+              <div style={{display:'none'}}>
+                  <input type="file" name='myImage' ref={imageRef}
+                   onChange={onImageChange}/>
+              </div>
           </div>
-        )}
-        </div>
+          {image && (
+            <div className="previewImage">
+              <AiOutlineClose onClick={() => setImage(null)} />
+              <img src={URL.createObjectURL(image)} alt="" />
+            </div>
+          )}
+          </div>
+      </div>
     </div>
-  )
-
-}
+    )
+  
+  }
 export default PostShare
